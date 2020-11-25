@@ -21,12 +21,12 @@ public class Commande implements Serializable {
 
     private Integer quantite;
 
-    private Boolean commandePayee;
+    private Integer commandePayee;
 
     public Commande() {
     }
 
-    public Commande(int id, Integer productId, Date dateCommande, Integer quantite, Boolean commandePayee) {
+    public Commande(int id, Integer productId, Date dateCommande, Integer quantite, Integer commandePayee) {
         this.id = id;
         this.productId = productId;
         this.dateCommande = dateCommande;
@@ -66,11 +66,11 @@ public class Commande implements Serializable {
         this.quantite = quantite;
     }
 
-    public Boolean getCommandePayee() {
+    public Integer getCommandePayee() {
         return commandePayee;
     }
 
-    public void setCommandePayee(Boolean commandePayee) {
+    public void setCommandePayee(Integer commandePayee) {
         this.commandePayee = commandePayee;
     }
 
