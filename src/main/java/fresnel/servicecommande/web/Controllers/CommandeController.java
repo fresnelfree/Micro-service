@@ -30,12 +30,17 @@ public class CommandeController {
     }
 
     @GetMapping(value = "/commandes/{id}")
-    public Optional<Commande> recupererUneCommande(@PathVariable int id){
+    public Optional<Commande> recupererUneCommande(@PathVariable int id) {
 
         Optional<Commande> commande = commandesDao.findById(id);
 
-        if(!commande.isPresent()) throw new CommandeNotFoundException("Cette commande n'existe pas");
+        if (!commande.isPresent())
+            throw new CommandeNotFoundException("Cette commande n'existe pas");
 
         return commande;
+    }
+    @GetMapping(value = "/")
+    public String Home(@PathVariable int id) {
+        return "Hello World !!";
     }
 }
