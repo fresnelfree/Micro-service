@@ -19,6 +19,11 @@ public class CommandeController {
     @Autowired
     CommandeDao commandesDao;
 
+    @GetMapping (value = "/")
+    public String Hello() {
+        return "Hello world";
+    }
+
     @PostMapping (value = "/commandes")
     public ResponseEntity <Commande> ajouterCommande(@RequestBody Commande commande){
 
