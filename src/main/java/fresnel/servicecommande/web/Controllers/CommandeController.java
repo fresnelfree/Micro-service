@@ -44,8 +44,4 @@ public class CommandeController {
 
         return commande;
     }
-    @GetMapping(value = "/")
-    public String Home(@PathVariable int id) {
-        return "Hello World !!";
-    }
 }
