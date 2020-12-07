@@ -1,5 +1,6 @@
 package fresnel.servicecommande.web.Controllers;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,14 +35,10 @@ public class CommandeController {
         return new ResponseEntity<Commande>(commande, HttpStatus.CREATED);
     }
 
-    @GetMapping(value = "/commandes/{id}")
-    public Optional<Commande> recupererUneCommande(@PathVariable int id) {
+    @GetMapping(value = "/cmd")
+    public List<Commande> recupererToutesCommande() {
 
-        Optional<Commande> commande = commandesDao.findById(id);
-
-        if (!commande.isPresent())
-            throw new CommandeNotFoundException("Cette commande n'existe pas");
-
-        return commande;
+        return commandesDao.findAll();
     }
+
 }
